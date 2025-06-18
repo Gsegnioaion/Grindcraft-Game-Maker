@@ -5,45 +5,6 @@ Grinds are the main way to get resources. To add a new grind, go to the "grinds"
 ```
 grinds: [
     {
-        name: "surface",                                // Name of the grind
-        unlocked: true,                                 // If true, the grind will be unlocked when the area is unlocked
-        auto: ["dirt hut"],                             // List of items that will automatically grind this grind
-        background: "images/grinds/overworld.png",      // Background image of the grind
-        resources: [                                    // List of the different resources in the grind
-            {
-                id: "stick",                            // Name of resource        
-                time: [["", 0.5]],                      // Time to grind with different tools
-                image: "stick",                         // Image of the resource, can be either a link/path or a resource name
-                probability: 50,                        // The higher the number, the more likely you are to get this resource
-            },
-            {
-                id: "dirt",
-                time: [["", 0.6]],
-                image: "dirt",
-                probability: 50,
-            },
-        ]
-    },
-
-    {
-        name: "forest",
-        unlocked: false,
-        auto: ["lumberjack"],
-        background: "images/grinds/forest.png",
-        resources: [
-            {
-                id: "wood",     
-                time: [["iron axe", 0.3], ["", 1]],
-                image: "wood",
-                probability: 80,
-            },
-            {
-                id: "leaves",
-                time: [["shears", 0.1, 2], ["", 0.4]],
-                image: "leaves",
-                probability: 20,
-            },
-        ]
     },
 ],
 ```
