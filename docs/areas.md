@@ -7,8 +7,8 @@ addArea("1",                                            // Function for adding a
 {
     name: "The Ancient Era",                                 // The name of the area.
     image: "images/areas/ancientEra.png",                // The background image of the area.
-    unlocked: "true",                                     // If true, the area will be unlocked when you start the game. The first area should always be unlocked!
-    updateWhileUnactive: "false",                          // If true, grinds in this area will still give you resources when you travel to another area.
+    unlocked: true,                                     // If true, the area will be unlocked when you start the game. The first area should always be unlocked!
+    updateWhileUnactive: false,                          // If true, grinds in this area will still give you resources when you travel to another area.
 
     grinds: [
       {
