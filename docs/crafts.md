@@ -3,35 +3,8 @@
 Crafts are used to craft different resources into new items. To add a new craft, go to the "crafts" property in the `addArea` function:
 
 ```
-crafts: [
-     {
-          name: "stick",                                                        // Name/id of the resource
-          desc: "Used to craft planks",                                         // Description of the upgrade
-          type: "display",                                                      // Craft type. Can either be "display" or "craft"
-          cost: [["stick", 0]],                                                 // List of items that are required to craft this item
-     },
-     {
-          name: "planks",
-          desc: "Used to make a crafting table",
-          type: "craft",
-          cost: [["stick", 2]],
-          unlockGrinds: ["forest"],                                             // List of grinds that will be unlocked by crafting this item
-     },
-     {
-          name: "door",
-          desc: "Required to build a dirt hut",
-          type: "craft",
-          amount: 3,                                                            // Used if you get more than one of the item
-          cost: [["planks", 6]],
-     },
-     {
-          name: "dirt hut",
-          desc: "Required to beat the game!",
-          type: "craft",
-          cost: [["dirt", 23], ["crafting table", 1], ["door", 1]],
-          message: "You have beaten the game!",                                 // Sends a message on screen the first time you craft this item
-     },
-],
+crafts: 
+    
 ```
 
 Individual crafts can have these properties:
