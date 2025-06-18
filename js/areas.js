@@ -1,9 +1,9 @@
 // Game Info
 setGameInfo({
-    name: "My Grindcraft Game",                         // The name of your game!
+    name: "Grindcraft Spanatos Edition",                         // The name of your game!
     version: "0.1",                                     // The current version of your game!
-    icon: "images/system/blank.png",                    // Link or path to an icon image for your game!
-    ID: "myGrindcraftGame",                             // Your game's ID! Should be unique for every game!
+    icon: "images/tabPicture.png",                    // Link or path to an icon image for your game!
+    ID: "Save1",                             // Your game's ID! Should be unique for every game!
 });
 
 // Resources
