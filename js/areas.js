@@ -33,72 +33,22 @@ addResources({                                          // Function for adding a
 
 addArea("c",                                            // Function for adding areas to your game
 {
-    name: "City State",
-    image: "images/areas/cityState.png",
+    name: "The Ancient Era",
+    image: "images/areas/ancientEra.png",
     unlocked: true,
-    updateWhileUnactive: true,
+    updateWhileUnactive: false,
 
     grinds: [
         {
             name: "surface",
             unlocked: true,
-            auto: ["dirt hut"],                         // List of items that will auto-grind this grind
+            auto: ["Gatherer"],                         // List of items that will auto-grind this grind
             background: "images/grinds/overworld.png",
-            resources: [
-                {
-                    id: "stick",
-                    time: [["", 0.5]],
-                    probability: 50,
-                },
-                {
-                    id: "dirt",
-                    time: [["", 0.6]],
-                    probability: 50,
-                },
-            ]
+            
         },
     ],
 
-    crafts: [
-        {
-            name: "stick",
-            desc: "Used to craft planks",
-            type: "display",
-            cost: [["stick", 0]],
-        },
-        {
-            name: "dirt",
-            desc: "Used to build a dirt hut",
-            type: "display",
-            cost: [["dirt", 0]],
-        },
-        {
-            name: "planks",
-            desc: "Used to make a crafting table",
-            type: "craft",
-            cost: [["stick", 2]],
-        },
-        {
-            name: "crafting table",
-            desc: "Required to build a dirt hut",
-            type: "craft",
-            cost: [["planks", 4]],
-        },
-        {
-            name: "door",
-            desc: "Required to build a dirt hut",
-            type: "craft",
-            amount: 3,
-            cost: [["planks", 6]],
-        },
-        {
-            name: "dirt hut",
-            desc: "Required to beat the game!",
-            type: "craft",
-            cost: [["dirt", 23], ["crafting table", 1], ["door", 1]],
-            message: "You have beaten the game!",
-        },
-    ],
+    crafts:
 
     update(diff) {                                      // diff is the time in milliseconds since last time the update function was runned
         
