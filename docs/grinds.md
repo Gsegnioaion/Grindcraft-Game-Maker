@@ -3,10 +3,8 @@
 Grinds are the main way to get resources. To add a new grind, go to the "grinds" property in the `addArea` function:
 
 ```
-grinds: [
-    {
-    },
-],
+grinds: 
+
 ```
 
 Individual grinds can have these properties:

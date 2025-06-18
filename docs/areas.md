@@ -3,16 +3,23 @@
 In your game, you can have multiple different areas, each with their own resources, grinds and crafts. To add a new area, you have to use the `addArea` function:
 
 ```
-addArea("c",                                            // Function for adding a new area. The "c" is the area ID. This should be unique for all the areas in your game!
+addArea("1",                                            // Function for adding a new area. The "c" is the area ID. This should be unique for all the areas in your game!
 {
-    name: "City State",                                 // The name of the area.
-    image: "images/areas/cityState.png",                // The background image of the area.
-    unlocked: true,                                     // If true, the area will be unlocked when you start the game. The first area should always be unlocked!
-    updateWhileUnactive: true,                          // If true, grinds in this area will still give you resources when you travel to another area.
+    name: "The Ancient Era",                                 // The name of the area.
+    image: "images/areas/ancientEra.png",                // The background image of the area.
+    unlocked: "true",                                     // If true, the area will be unlocked when you start the game. The first area should always be unlocked!
+    updateWhileUnactive: "false",                          // If true, grinds in this area will still give you resources when you travel to another area.
 
-    grinds: [                                           // List of all the different grinds in this area.
-                                                        
-    ],
+    grinds: [
+      {
+        name: "Surface",
+        unlocked: "true",
+        auto: ["Gatherer"],
+        background: "images/grinds/overworld.png",
+      }
+    ],                                         // List of all the different grinds in this area.
+
+    
 
     crafts: [                                           // List of all the different crafts/recipes in this area.
                                                         
