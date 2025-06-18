@@ -15,6 +15,9 @@ addResources({                                          // Function for adding a
     grass: {
         image: "images/grass.png",
     },
+    stone: {
+        image: "images/stone.png",
+    },
 });
 
 // Areas
@@ -35,12 +38,17 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "stick",
                     time: [["", 0.5]],
-                    probability: 50,
+                    probability: 30,
                 },
                 {
                     id: "grass",
                     time: [["", 0.6]],
-                    probability: 50,
+                    probability: 40,
+                },
+                {
+                    id: "stone",
+                    time: [["", 0.7]],
+                    probability: 30,
                 },
             ]
         },
@@ -49,7 +57,7 @@ addArea("c",                                            // Function for adding a
     crafts: [
         {
             name: "stick",
-            desc: "Used to craft planks",
+            desc: "The foundation of civilization",
             type: "display",
             cost: [["stick", 0]],
         },
@@ -58,6 +66,13 @@ addArea("c",                                            // Function for adding a
             desc: "Used to get twine and seeds",
             type: "display",
             cost: [["grass", 0]],
+        },
+        {
+            name: "stone",
+            desc: "Can be a weapon in a bad situation",
+            type: "display",
+            cost: [["stone", 0]],
+
         },
     ],
 
