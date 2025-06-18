@@ -1,31 +1,19 @@
 // Game Info
 setGameInfo({
-    name: "Grindcraft Spanatos Edition",                         // The name of your game!
+    name: "GrindCraft Spanatos Edition",                         // The name of your game!
     version: "0.1",                                     // The current version of your game!
     icon: "images/tabPicture.png",                    // Link or path to an icon image for your game!
-    ID: "Save1",                             // Your game's ID! Should be unique for every game!
+    ID: "spanatos",                             // Your game's ID! Should be unique for every game!
 });
 
 // Resources
 
 addResources({                                          // Function for adding all the resources (items/tools/buildings) that are used in your game!
-    dirt: {
-        image: "images/dirt.png",
-    },
     stick: {
         image: "images/stick.png",
     },
-    planks: {
-        image: "images/planks.png",
-    },
-    door: {
-        image: "images/door.png",
-    },
-    "crafting table": {
-        image: "images/craftingTable.png",
-    },
-    "dirt hut": {
-        image: "images/dirtHut.png",
+    grass: {
+        image: "images/grass.png",
     },
 });
 
@@ -36,19 +24,42 @@ addArea("c",                                            // Function for adding a
     name: "The Ancient Era",
     image: "images/areas/ancientEra.png",
     unlocked: true,
-    updateWhileUnactive: false,
+    updateWhileUnactive: true,
 
     grinds: [
         {
             name: "surface",
-            unlocked: true,
-            auto: ["Gatherer"],                         // List of items that will auto-grind this grind
-            background: "images/grinds/overworld.png",
-            
+            unlocked: true,                     // List of items that will auto-grind this grind
+            background: "images/grinds/surface.png",
+            resources: [
+                {
+                    id: "stick",
+                    time: [["", 0.5]],
+                    probability: 50,
+                },
+                {
+                    id: "grass",
+                    time: [["", 0.6]],
+                    probability: 50,
+                },
+            ]
         },
     ],
 
-    crafts:
+    crafts: [
+        {
+            name: "stick",
+            desc: "Used to craft planks",
+            type: "display",
+            cost: [["stick", 0]],
+        },
+        {
+            name: "grass",
+            desc: "Used to get twine and seeds",
+            type: "display",
+            cost: [["grass", 0]],
+        },
+    ],
 
     update(diff) {                                      // diff is the time in milliseconds since last time the update function was runned
         
