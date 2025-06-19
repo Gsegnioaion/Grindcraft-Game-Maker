@@ -30,6 +30,9 @@ addResources({                                          // Function for adding a
     shovel: {
         image: "images/shovel.png",
     },
+    dirt: {
+        image: "images/dirt.png",
+    },
 });
 
 // Areas
@@ -50,17 +53,22 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "stick",
                     time: [["basket", 0.3], ["", 0.5]],
-                    probability: 30,
+                    probability: 20,
                 },
                 {
                     id: "grass",
                     time: [["", 0.6]],
-                    probability: 40,
+                    probability: 30,
                 },
                 {
                     id: "stone",
                     time: [["basket", 0.5], ["", 0.7]],
                     probability: 30,
+                },
+                {
+                    id: "dirt",
+                    time: [["shovel", 0.6]],
+                    probability: 20,
                 },
             ]
         },
@@ -107,6 +115,12 @@ addArea("c",                                            // Function for adding a
             name: "shovel",
             desc: "Unlocks the ruins",
             cost: [["stick", 2], ["stone", 3], ["rope", 1]],
+        },
+        {
+            name: "dirt",
+            desc: "A pile of dirt",
+            type: "display",
+            cost: [["dirt", 0]],
         },
     ],
 
