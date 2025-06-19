@@ -24,6 +24,12 @@ addResources({                                          // Function for adding a
     basket: {
         image: "images/basket.png",
     },
+    rope: {
+        image: "images/rope.png",
+    },
+    shovel: {
+        image: "images/shovel.png",
+    },
 });
 
 // Areas
@@ -91,6 +97,16 @@ addArea("c",                                            // Function for adding a
             name: "basket",
             desc: "Speeds up gathering of surface resources",
             cost: [["twine", 10]],
+        },
+        {
+            name: "rope",
+            desc: "condensed and braided twine, stronger than before",
+            cost: [["twine", 10]],
+        },
+        {
+            name: "shovel",
+            desc: "Unlocks the ruins",
+            cost: [["stick", 2], ["stone", 3], ["rope", 1]],
         },
     ],
 
