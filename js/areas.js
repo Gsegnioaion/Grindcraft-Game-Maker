@@ -18,6 +18,12 @@ addResources({                                          // Function for adding a
     stone: {
         image: "images/stone.png",
     },
+    twine: {
+        image: "images/twine.png",
+    },
+    basket: {
+        image: "images/basket.png",
+    },
 });
 
 // Areas
@@ -37,7 +43,7 @@ addArea("c",                                            // Function for adding a
             resources: [
                 {
                     id: "stick",
-                    time: [["", 0.5]],
+                    time: [["basket", 0.3], ["", 0.5]],
                     probability: 30,
                 },
                 {
@@ -47,7 +53,7 @@ addArea("c",                                            // Function for adding a
                 },
                 {
                     id: "stone",
-                    time: [["", 0.7]],
+                    time: [["basket", 0.5], ["", 0.7]],
                     probability: 30,
                 },
             ]
@@ -73,6 +79,18 @@ addArea("c",                                            // Function for adding a
             type: "display",
             cost: [["stone", 0]],
 
+        },
+        {
+            name: "twine",
+            desc: "Used to make Rope and Baskets",
+            type: "craft",
+            amount: 2,
+            cost: [["grass", 1]],
+        },
+        {
+            name: "basket",
+            desc: "Speeds up gathering of surface resources",
+            cost: [["twine", 10]],
         },
     ],
 
