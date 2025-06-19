@@ -33,6 +33,9 @@ addResources({                                          // Function for adding a
     dirt: {
         image: "images/dirt.png",
     },
+    axe: {
+        image: "images/axe.png",
+    },
 });
 
 // Areas
@@ -115,6 +118,11 @@ addArea("c",                                            // Function for adding a
             name: "shovel",
             desc: "Unlocks the ruins",
             cost: [["stick", 2], ["stone", 3], ["rope", 1]],
+        },
+        {
+            name: "axe",
+            desc: "A powerful to cut down wood, unlocks FOREST",
+            cost: [["stick", 2], ["rope", 2], ["stone", 4]],
         },
         {
             name: "dirt",
