@@ -72,6 +72,18 @@ addResources({                                          // Function for adding a
     "sugar cane": {
         image: "images/sugarcane.png",
     },
+    "moist clay": {
+        image: "images/moistclay.png",
+    },
+    "dirt hut": {
+        image: "images/dirthut.png",
+    },
+    seeds: {
+        image: "images/seeds.png",
+    },
+    plot: {
+        image: "images/plot.png",
+    },
 });
 
 // Areas
@@ -97,7 +109,7 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "grass",
                     time: [["", 0.6]],
-                    probability: 25,
+                    probability: 15,
                 },
                 {
                     id: "stone",
@@ -107,7 +119,7 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "dirt",
                     time: [["shovel", 0.6]],
-                    probability: 15,
+                    probability: 25,
                 },
                 {
                     id: "gravel",
@@ -192,6 +204,11 @@ addArea("c",                                            // Function for adding a
             desc: "Used to make Rope and Baskets",
             type: "craft",
             amount: 2,
+            cost: [["grass", 1]],
+        },
+        {
+            name: "seeds",
+            desc: "Grows wheat",
             cost: [["grass", 1]],
         },
         {
@@ -282,6 +299,11 @@ addArea("c",                                            // Function for adding a
             cost: [["sugar cane", 0]],
         },
         {
+            name: "moist clay",
+            desc: "Primitive Glue",
+            cost: [["water", 1], ["dry clay", 1]],
+        },
+        {
             name: "flint",
             desc: "A small shard of something buried in gravel",
             cost: [["gravel", 3]],
@@ -290,6 +312,16 @@ addArea("c",                                            // Function for adding a
             name: "grindstone",
             desc: "Used to sharpen things",
             cost: [["flint", 2], ["oak log", 1], ["stone", 5], ["stick", 5]],
+        },
+        {
+            name: "plot",
+            desc: "A plot of farmland growing wheat",
+            cost: [["dirt", 8], ["water", 1], ["seeds", 8]],
+        },
+        {
+            name: "dirt hut",
+            desc: "A basic shelter that attracts the primitive species",
+            cost: [["dirt", 20], ["moist clay", 2]],
         },
     ],
 
