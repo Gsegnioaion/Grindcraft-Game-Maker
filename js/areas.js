@@ -84,6 +84,12 @@ addResources({                                          // Function for adding a
     plot: {
         image: "images/plot.png",
     },
+    villager: {
+        image: "images/villager.png",
+    },
+    gatherer: {
+        image: "images/gatherer.png",
+    },
 });
 
 // Areas
@@ -99,6 +105,7 @@ addArea("c",                                            // Function for adding a
         {
             name: "surface",
             unlocked: true,                     // List of items that will auto-grind this grind
+            auto: ["gatherer"],
             background: "images/grinds/surface.png",
             resources: [
                 {
@@ -322,6 +329,16 @@ addArea("c",                                            // Function for adding a
             name: "dirt hut",
             desc: "A basic shelter that attracts the primitive species",
             cost: [["dirt", 20], ["moist clay", 2]],
+        },
+        {
+            name: "villager",
+            desc: "A simple minded villager. Can be given a job",
+            cost: [["dirt hut", 1], ["plot", 1]],
+        },
+        {
+            name: "gatherer", 
+            desc: "automates surface grind",
+            cost: [["villager", 1], ["basket", 1]],
         },
     ],
 
