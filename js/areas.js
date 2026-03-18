@@ -90,6 +90,12 @@ addResources({                                          // Function for adding a
     gatherer: {
         image: "images/gatherer.png",
     },
+    "fire starter": {
+        image: "images/firestarter.png",
+    },
+    "simple fire": {
+        image: "images/simplefire.png",
+    },
 });
 
 // Areas
@@ -339,6 +345,16 @@ addArea("c",                                            // Function for adding a
             name: "gatherer", 
             desc: "automates surface grind",
             cost: [["villager", 1], ["basket", 1]],
+        },
+        {
+            name: "fire starter",
+            desc: "used to start a fire",
+            cost: [["rope", 1], ["leaves", 10]],
+        },
+        {
+            name: "simple fire",
+            desc: "A fire. Very useful",
+            cost: [["fire starter", 1], ["stone", 20], ["stick", 10]],
         },
     ],
 
