@@ -96,6 +96,22 @@ addResources({                                          // Function for adding a
     "simple fire": {
         image: "images/simplefire.png",
     },
+    "forester": {
+        image: "images/forester.png",
+    },
+    "grindstone villager": {
+        image: "images/grindstonevillager.png",
+    },
+    "flint shard": {
+        image: "images/flintshard.png",
+    },
+    "spear": {
+        image: "images/spear.png",
+    },
+    "leather": {
+        image: "images/leather.png",
+    },
+
 });
 
 // Areas
@@ -149,6 +165,7 @@ addArea("c",                                            // Function for adding a
         {
             name: "forest",
             unlocked: false,
+            auto: ["forester"],
             background: "images/grinds/forest.png",
             resources: [
                 {
@@ -187,6 +204,16 @@ addArea("c",                                            // Function for adding a
                     id: "sugar cane",
                     time: [["bowl", 1.1]],
                     probability: 20, 
+                },
+            ]
+        },
+        {
+            name: "hunting",
+            unlocked: false,
+            resources: [
+                {
+                    id: "leather",
+                    time: [["spear", 1]],
                 },
             ]
         },
@@ -356,6 +383,23 @@ addArea("c",                                            // Function for adding a
             desc: "A fire. Very useful",
             cost: [["fire starter", 1], ["stone", 20], ["stick", 10]],
         },
+        {
+            name: "grindstone villager",
+            desc: "allows you to make flint shards",
+            cost: [["villager", 1], ["grindstone", 1]],
+        },
+        {
+            name: "flint shard",
+            desc: "used to make bone tools",
+            cost: [["grindstone villager", 0], ["flint", 1]],
+            amount: 2,
+        },
+        {
+            name: "spear",
+            desc: "unlocks hunting grind",
+            unlockGrinds: "hunting",
+            cost: [["stick", 6], ["stone", 6], ["rope", 4], ["oak log", 1], ["moist clay", 1]],
+        }, 
     ],
 
     update(diff) {                                      // diff is the time in milliseconds since last time the update function was runned
