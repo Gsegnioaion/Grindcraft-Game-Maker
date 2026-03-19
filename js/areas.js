@@ -120,6 +120,9 @@ addResources({                                          // Function for adding a
     "toughened rope": {
         image: "images/toughenedrope.png",
     },
+    "bone axe": {
+        image: "images/boneaxe.png",
+    },
 
 });
 
@@ -430,6 +433,16 @@ addArea("c",                                            // Function for adding a
             name: "toughened rope",
             desc: "used to make bone tools",
             cost: [["toughened leather", 2], ["leather worker", 0]],
+        },
+        {
+            name: "bone axe",
+            desc: "very nice",
+            cost: [["bone", 2], ["flint shard", 4], ["toughened rope", 2]],
+        },
+        {
+            name: "forester",
+            desc: "automates forest grind",
+            cost: [["villager", 1], ["bone axe", 1]],
         },
     ],
 
