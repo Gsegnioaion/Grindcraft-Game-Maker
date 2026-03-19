@@ -111,6 +111,15 @@ addResources({                                          // Function for adding a
     "leather": {
         image: "images/leather.png",
     },
+    "toughened leather": {
+        image: "images/toughenedleather.png",
+    },
+    "leather worker": {
+        image: "images/leatherworker.png",
+    },
+    "toughened rope": {
+        image: "images/toughenedrope.png",
+    },
 
 });
 
@@ -214,6 +223,7 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "leather",
                     time: [["spear", 1]],
+                    probability: 100,
                 },
             ]
         },
@@ -400,6 +410,27 @@ addArea("c",                                            // Function for adding a
             unlockGrinds: "hunting",
             cost: [["stick", 6], ["stone", 6], ["rope", 4], ["oak log", 1], ["moist clay", 1]],
         }, 
+        {
+            name: "leather",
+            desc: "very nice",
+            cost: [["leather", 0]],
+            type: "display",
+        },
+        {
+            name: "toughened leather",
+            desc: "used to make toughened rope",
+            cost: [["leather", 1], ["simple fire", 0]],
+        },
+        {
+            name: "leather worker",
+            desc: "can work with leather",
+            cost: [["toughened leather", 5], ["villager", 1]],
+        },
+        {
+            name: "toughened rope",
+            desc: "used to make bone tools",
+            cost: [["toughened leather", 2], ["leather worker", 0]],
+        },
     ],
 
     update(diff) {                                      // diff is the time in milliseconds since last time the update function was runned
