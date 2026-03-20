@@ -123,7 +123,12 @@ addResources({                                          // Function for adding a
     "bone axe": {
         image: "images/boneaxe.png",
     },
-
+    "bucket": {
+        image: "images/bucket.png",
+    },
+    "water lover": {
+        image: "images/waterlover.png",
+    },
 });
 
 // Areas
@@ -182,17 +187,17 @@ addArea("c",                                            // Function for adding a
             resources: [
                 {
                     id: "oak log",
-                    time: [["axe", 0.8]],
+                    time: [["bone axe", 0.5], ["axe", 0.8]],
                     probability: 55,
                 },
                 {
                     id: "bark",
-                    time: [["axe", 0.6]],
+                    time: [["bone axe", 0.4], ["axe", 0.6]],
                     probability: 35,
                 },
                 {
                     id: "mushroom",
-                    time: [["axe", 1]],
+                    time: [["bone axe", 0.8], ["axe", 1]],
                     probability: 10,
                 },
             ]
@@ -200,26 +205,27 @@ addArea("c",                                            // Function for adding a
         {
             name: "river",
             unlocked: false,
+            auto: ["water lover"],
             background: "images/grinds/river.png",
             resources: [
                 {
                     id: "water",
-                    time: [["bowl", 1]],
+                    time: [["bucket", 0.7], ["bowl", 1]],
                     probability: 40,
                 },
                 {
                     id: "leaves",
-                    time: [["bowl", 0.5]],
+                    time: [["bucket", 0.3], ["bowl", 0.5]],
                     probability: 20,
                 },
                 {
                     id: "dry clay",
-                    time: [["bowl", 1.2]],
+                    time: [["bucket", 0.9], ["bowl", 1.2]],
                     probability: 20,
                 },
                 {
                     id: "sugar cane",
-                    time: [["bowl", 1.1]],
+                    time: [["bucket", 0.8], ["bowl", 1.1]],
                     probability: 20, 
                 },
             ]
@@ -280,6 +286,11 @@ addArea("c",                                            // Function for adding a
             cost: [["twine", 10]],
         },
         {
+            name: "toughened rope",
+            desc: "used to make bone tools",
+            cost: [["toughened leather", 2], ["leather worker", 0]],
+        },
+        {
             name: "shovel",
             desc: "Unlocks the ruins",
             cost: [["stick", 2], ["stone", 3], ["rope", 1]],
@@ -291,10 +302,21 @@ addArea("c",                                            // Function for adding a
             unlockGrinds: "forest",
         },
         {
+            name: "spear",
+            desc: "unlocks hunting grind",
+            unlockGrinds: "hunting",
+            cost: [["stick", 6], ["stone", 6], ["rope", 4], ["oak log", 1], ["moist clay", 1]],
+        }, 
+        {
             name: "bowl",
             desc: "unlocks river grind",
             cost: [["bark", 3]],
             unlockGrinds: "river",
+        },
+        {
+            name: "bucket",
+            desc: "speeds up river grind",
+            cost: [["bark", 9], ["bowl", 1], ["twine", 6], ["stick", 2]],
         },
         {
             name: "dirt",
@@ -309,16 +331,16 @@ addArea("c",                                            // Function for adding a
             cost: [["gravel", 0]],
         },
         {
-            name: "bone",
-            desc: "A remnant of something once alive",
-            type: "display",
-            cost: [["bone", 0]],
-        },
-        {
             name: "oak log",
             desc: "A part of something greater",
             type: "display",
             cost: [["oak log", 0]],
+        },
+        {
+            name: "bone",
+            desc: "A remnant of something once alive",
+            type: "display",
+            cost: [["bone", 0]],
         },
         {
             name: "bark",
@@ -351,20 +373,26 @@ addArea("c",                                            // Function for adding a
             cost: [["dry clay", 0]],
         },
         {
+            name: "moist clay",
+            desc: "Primitive Glue",
+            cost: [["water", 1], ["dry clay", 1]],
+        },
+        {
             name: "sugar cane",
             desc: "A cane that contains sugar",
             type: "display",
             cost: [["sugar cane", 0]],
         },
         {
-            name: "moist clay",
-            desc: "Primitive Glue",
-            cost: [["water", 1], ["dry clay", 1]],
-        },
-        {
             name: "flint",
             desc: "A small shard of something buried in gravel",
             cost: [["gravel", 3]],
+        },
+        {
+            name: "flint shard",
+            desc: "used to make bone tools",
+            cost: [["grindstone villager", 0], ["flint", 1]],
+            amount: 2,
         },
         {
             name: "grindstone",
@@ -392,6 +420,26 @@ addArea("c",                                            // Function for adding a
             cost: [["villager", 1], ["basket", 1]],
         },
         {
+            name: "forester",
+            desc: "automates forest grind",
+            cost: [["villager", 1], ["bone axe", 1]],
+        },
+        {
+            name: "water lover",
+            desc: "automates river grind",
+            cost: [["villager", 1], ["bucket", 1]],
+        },
+        {
+            name: "grindstone villager",
+            desc: "allows you to make flint shards",
+            cost: [["villager", 1], ["grindstone", 1]],
+        },
+        {
+            name: "leather worker",
+            desc: "can work with leather",
+            cost: [["toughened leather", 5], ["villager", 1]],
+        },
+        {
             name: "fire starter",
             desc: "used to start a fire",
             cost: [["rope", 1], ["leaves", 10]],
@@ -402,25 +450,8 @@ addArea("c",                                            // Function for adding a
             cost: [["fire starter", 1], ["stone", 20], ["stick", 10]],
         },
         {
-            name: "grindstone villager",
-            desc: "allows you to make flint shards",
-            cost: [["villager", 1], ["grindstone", 1]],
-        },
-        {
-            name: "flint shard",
-            desc: "used to make bone tools",
-            cost: [["grindstone villager", 0], ["flint", 1]],
-            amount: 2,
-        },
-        {
-            name: "spear",
-            desc: "unlocks hunting grind",
-            unlockGrinds: "hunting",
-            cost: [["stick", 6], ["stone", 6], ["rope", 4], ["oak log", 1], ["moist clay", 1]],
-        }, 
-        {
             name: "leather",
-            desc: "very nice",
+            desc: "Leather man",
             cost: [["leather", 0]],
             type: "display",
         },
@@ -430,24 +461,9 @@ addArea("c",                                            // Function for adding a
             cost: [["leather", 1], ["simple fire", 0]],
         },
         {
-            name: "leather worker",
-            desc: "can work with leather",
-            cost: [["toughened leather", 5], ["villager", 1]],
-        },
-        {
-            name: "toughened rope",
-            desc: "used to make bone tools",
-            cost: [["toughened leather", 2], ["leather worker", 0]],
-        },
-        {
             name: "bone axe",
-            desc: "very nice",
+            desc: "speeds up forest grind",
             cost: [["bone", 2], ["flint shard", 4], ["toughened rope", 2]],
-        },
-        {
-            name: "forester",
-            desc: "automates forest grind",
-            cost: [["villager", 1], ["bone axe", 1]],
         },
     ],
 
