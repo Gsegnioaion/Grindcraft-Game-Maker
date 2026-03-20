@@ -183,12 +183,17 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "oak log",
                     time: [["axe", 0.8]],
-                    probability: 60,
+                    probability: 55,
                 },
                 {
                     id: "bark",
                     time: [["axe", 0.6]],
-                    probability: 40,
+                    probability: 35,
+                },
+                {
+                    id: "mushroom",
+                    time: [["axe", 1]],
+                    probability: 10,
                 },
             ]
         },
