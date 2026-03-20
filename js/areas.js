@@ -233,6 +233,7 @@ addArea("c",                                            // Function for adding a
         {
             name: "hunting",
             unlocked: false,
+            background: "images/grinds/hunting.png",
             resources: [
                 {
                     id: "leather",
