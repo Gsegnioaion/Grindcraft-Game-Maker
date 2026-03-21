@@ -129,6 +129,18 @@ addResources({                                          // Function for adding a
     "water lover": {
         image: "images/waterlover.png",
     },
+    "raw beef": {
+        image: "images/rawbeef.png",
+    },
+    wool: {
+        image: "images/wool.png",
+    },
+    feather: {
+        image: "images/feather.png",
+    },
+    egg: {
+        image: "images/egg.png",
+    },
 });
 
 // Areas
@@ -238,8 +250,28 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "leather",
                     time: [["spear", 1]],
-                    probability: 100,
+                    probability: 35,
                 },
+                {
+                    id: "raw beef",
+                    time: [["spear", 1.2]],
+                    probability: 20,
+                },
+                {
+                    id: "egg",
+                    time: [["spear", 0.5]],
+                    probability: 15,
+                },
+                {
+                    id: "feather",
+                    time: [["spear", 0.6]],
+                    probability: 15,
+                },
+                {
+                    id: "wool",
+                    time: [["spear", 1]],
+                    probability: 15,
+                }
             ]
         },
     ],
@@ -454,6 +486,30 @@ addArea("c",                                            // Function for adding a
             name: "leather",
             desc: "Leather man",
             cost: [["leather", 0]],
+            type: "display",
+        },
+        {
+            name: "raw beef",
+            desc: "raw meat from a cow",
+            cost: [["raw beef", 0]],
+            type: "display",
+        },
+        {
+            name: "egg",
+            desc: "an egg from some kind of bird",
+            cost: [["egg", 0]],
+            type: "display",
+        },
+        {
+            name: "feather",
+            desc: "a bird feather",
+            cost: [["feather", 0]],
+            type: "display",
+        },
+        {
+            name: "wool",
+            desc: "wool fibers from a sheep",
+            cost: [["wool", 0]],
             type: "display",
         },
         {
