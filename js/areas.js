@@ -205,7 +205,7 @@ addArea("c",                                            // Function for adding a
                 {
                     id: "bone",
                     time: [["bone shovel", 0.9], ["shovel", 0.9]],
-                    probability: 15,
+                    probability: 5,
                 },
             ]
         },
