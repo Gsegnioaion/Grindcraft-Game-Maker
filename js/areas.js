@@ -141,6 +141,24 @@ addResources({                                          // Function for adding a
     egg: {
         image: "images/egg.png",
     },
+    "bone spear": {
+        image: "images/bonespear.png",
+    },
+    hunter: {
+        image: "images/hunter.png",
+    },
+    shears: {
+        image: "images/shears.png",
+    },
+    "string basket": {
+        image: "images/stringbasket.png",
+    },
+    "bone shovel": {
+        image: "images/boneshovel.png",
+    },
+    "string": {
+        image: "images/string.png",
+    },
 });
 
 // Areas
@@ -176,17 +194,17 @@ addArea("c",                                            // Function for adding a
                 },
                 {
                     id: "dirt",
-                    time: [["shovel", 0.6]],
+                    time: [["bone shovel", 0.4], ["shovel", 0.6]],
                     probability: 25,
                 },
                 {
                     id: "gravel",
-                    time: [["shovel", 0.7]],
+                    time: [["bone shovel", 0.5], ["shovel", 0.7]],
                     probability: 15,
                 },
                 {
                     id: "bone",
-                    time: [["shovel", 0.9]],
+                    time: [["bone shovel", 0.9], ["shovel", 0.9]],
                     probability: 15,
                 },
             ]
@@ -246,30 +264,31 @@ addArea("c",                                            // Function for adding a
             name: "hunting",
             unlocked: false,
             background: "images/grinds/hunting.png",
+            auto: ["hunter"],
             resources: [
                 {
                     id: "leather",
-                    time: [["spear", 1]],
+                    time: [["bone spear", 0.7], ["spear", 1]],
                     probability: 35,
                 },
                 {
                     id: "raw beef",
-                    time: [["spear", 1.2]],
+                    time: [["bone spear", 0.9], ["spear", 1.2]],
                     probability: 20,
                 },
                 {
                     id: "egg",
-                    time: [["spear", 0.5]],
+                    time: [["bone spear", 0.3], ["spear", 0.5]],
                     probability: 15,
                 },
                 {
                     id: "feather",
-                    time: [["spear", 0.6]],
+                    time: [["bone spear", 0.4], ["spear", 0.6]],
                     probability: 15,
                 },
                 {
                     id: "wool",
-                    time: [["spear", 1]],
+                    time: [["bone spear", 0.75], ["spear", 1]],
                     probability: 15,
                 }
             ]
@@ -312,6 +331,11 @@ addArea("c",                                            // Function for adding a
             name: "basket",
             desc: "Speeds up gathering of surface resources",
             cost: [["twine", 10]],
+        },
+        {
+            name: "string basket",
+            desc: "a component for automating the surface grind",
+            cost: [["string", 12]],
         },
         {
             name: "rope",
@@ -428,6 +452,11 @@ addArea("c",                                            // Function for adding a
             amount: 2,
         },
         {
+            name: "shears",
+            desc: "used to turn wool into string",
+            cost: [["flint shard", 2], ["stick", 2], ["rope", 1]],
+        },
+        {
             name: "grindstone",
             desc: "Used to sharpen things",
             cost: [["flint", 2], ["oak log", 1], ["stone", 5], ["stick", 5]],
@@ -450,17 +479,22 @@ addArea("c",                                            // Function for adding a
         {
             name: "gatherer", 
             desc: "automates surface grind",
-            cost: [["villager", 1], ["basket", 1]],
+            cost: [["villager", 1], ["bone shovel", 1], ["string basket", 1], ["stick", 30]],
         },
         {
             name: "forester",
             desc: "automates forest grind",
-            cost: [["villager", 1], ["bone axe", 1]],
+            cost: [["villager", 1], ["bone axe", 1], ["bark", 10]],
         },
         {
             name: "water lover",
             desc: "automates river grind",
-            cost: [["villager", 1], ["bucket", 1]],
+            cost: [["villager", 1], ["bucket", 1], ["sugar cane", 10]],
+        },
+        {
+            name: "hunter",
+            desc: "automates hunting grind",
+            cost: [["villager", 1], ["bone spear", 1], ["raw beef", 5]],
         },
         {
             name: "grindstone villager",
@@ -513,6 +547,12 @@ addArea("c",                                            // Function for adding a
             type: "display",
         },
         {
+            name: "string",
+            desc: "a nice and workable string",
+            cost: [["wool", 2], ["shears", 0]],
+            amount: 4,
+        },
+        {
             name: "toughened leather",
             desc: "used to make toughened rope",
             cost: [["leather", 1], ["simple fire", 0]],
@@ -521,6 +561,16 @@ addArea("c",                                            // Function for adding a
             name: "bone axe",
             desc: "speeds up forest grind",
             cost: [["bone", 2], ["flint shard", 4], ["toughened rope", 2]],
+        },
+        {
+            name: "bone shovel",
+            desc: "speeds up parts of the surface grind",
+            cost: [["bone", 2], ["flint shard", 3], ["toughened rope", 1]],
+        },
+        {
+            name: "bone spear",
+            desc: "speeds up hunting grind",
+            cost: [["bone", 6], ["flint shard", 6], ["toughened rope", 4], ["oak log", 2]],
         },
     ],
 
