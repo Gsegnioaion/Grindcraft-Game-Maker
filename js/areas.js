@@ -163,7 +163,7 @@ addResources({                                          // Function for adding a
 
 // Areas
 
-addArea("c",                                            // Function for adding areas to your game
+addArea("0",                                            // Function for adding areas to your game
 {
     name: "The Ancient Era",
     image: "images/areas/ancientEra.png",
