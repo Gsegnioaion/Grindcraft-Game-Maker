@@ -391,7 +391,7 @@ addArea("0",                                            // Function for adding a
         {
             name: "hoe",
             desc: "unlocks farming grind",
-            unlockGrinds: "hunting",
+            unlockGrinds: "farming",
             cost: [["plot", 1], ["seeds", 1], ["bucket", 1], ["water", 1], ["stick", 3], ["rope", 3], ["stone", 3]],
         },
         {
