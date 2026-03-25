@@ -159,6 +159,12 @@ addResources({                                          // Function for adding a
     "string": {
         image: "images/string.png",
     },
+    "wheat": {
+        image: "images/wheat.png",
+    },
+    "hoe": {
+        image: "images/hoe.png",
+    },
 });
 
 // Areas
@@ -293,6 +299,18 @@ addArea("0",                                            // Function for adding a
                 }
             ]
         },
+        {
+            name: "farming",
+            unlocked: false,
+            background: "images/grinds/farming.png",
+            resources: [
+                {
+                    id: "wheat",
+                    time: [["hoe", 10]],
+                    probability: 100,
+                },
+            ]
+        },
     ],
 
     crafts: [
@@ -326,6 +344,12 @@ addArea("0",                                            // Function for adding a
             name: "seeds",
             desc: "Grows wheat",
             cost: [["grass", 1]],
+        },
+        {
+            name: "wheat",
+            desc: "What you gain from seeds",
+            cost: [["wheat", 0]],
+            type: "display",
         },
         {
             name: "basket",
@@ -364,6 +388,12 @@ addArea("0",                                            // Function for adding a
             unlockGrinds: "hunting",
             cost: [["stick", 6], ["stone", 6], ["rope", 4], ["oak log", 1], ["moist clay", 1]],
         }, 
+        {
+            name: "hoe",
+            desc: "unlocks farming grind",
+            unlockGrinds: "hunting",
+            cost: [["plot", 1], ["seeds", 1], ["bucket", 1], ["water", 1], ["stick", 3], ["rope", 3], ["stone", 3]],
+        },
         {
             name: "bowl",
             desc: "unlocks river grind",
